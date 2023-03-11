@@ -14,10 +14,14 @@ def get_file_info(data: bytes) -> (str, int):
 
 def upload_file(server_socket: socket, file_name: str, file_size: int):
     # create a SHA256 object to verify file hash
+    hash256 = hashlib.sha256(file_name)
     # TODO: section 1 step 5 in README.md file
 
     # create a new file to store the received data
     with open(file_name+'.temp', 'wb') as file:
+        data_received = 0
+        while data_received < file_size:
+
         # TODO: section 1 step 7a - 7e in README.md file
         pass  # replace this line with your code for section 1 step 7a - 7e
 
